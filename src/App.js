@@ -29,9 +29,15 @@ function App() {
         return;
     }
 
+    const response = await axios.get("http://localhost:3000")
+
+    console.log(response.data)
+
+
     const options = {
-        key: "rzp_test_urEhiq3FFBwTRn", // Enter the Key ID generated from the Dashboard
+        key: "rzp_test_ywdHvXUYgtmY9y", // Enter the Key ID generated from the Dashboard
         amount: 10000, // 100 --> 100 rupees 1 rs -- > 1 cent 1 paise
+        order_id: response.data.id,
         currency: "INR",
         name: "Sell a course",
         description: "Its a very good razorpay course",
@@ -43,11 +49,11 @@ function App() {
             };
             console.log(data)
         },
-        // prefill: {
-        //     name: "Gautham",
-        //     email: "kinggautham495@gmail.com",
-        //     contact: "9999999999",
-        // },
+        prefill: {
+            name: "Gautham",
+            email: "kinggautham495@gmail.com",
+            contact: "9999999999",
+        },
     };
 
     const paymentObject = new window.Razorpay(options);
@@ -79,4 +85,12 @@ export default App;
 // 1. Individual 
 // 2. LLP 
 // 3. Enterprise Company
+
+// order id
+
+// ngrok postman node js express webhook
+
+// PCI 
+
+// webhook - server to server notifications
  
