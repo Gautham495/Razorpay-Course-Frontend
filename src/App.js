@@ -3,6 +3,8 @@ import axios from 'axios'
 
 function App() {
 
+  //vanilla 
+
   function loadScript(src) {
     return new Promise((resolve) => {
         const script = document.createElement("script");
@@ -28,11 +30,11 @@ function App() {
     }
 
     const options = {
-        key: "rzp_test_r6FiJfddJh76SI", // Enter the Key ID generated from the Dashboard
-        amount: 100,
+        key: "rzp_test_urEhiq3FFBwTRn", // Enter the Key ID generated from the Dashboard
+        amount: 10000, // 100 --> 100 rupees 1 rs -- > 1 cent 1 paise
         currency: "INR",
-        name: "Soumya Corp.",
-        description: "Test Transaction",
+        name: "Sell a course",
+        description: "Its a very good razorpay course",
         handler: async function (response) {
             const data = {
                 razorpayPaymentId: response.razorpay_payment_id,
@@ -40,20 +42,12 @@ function App() {
                 razorpaySignature: response.razorpay_signature,
             };
             console.log(data)
-
-
         },
-        prefill: {
-            name: "Gautham",
-            email: "SoumyaDey@example.com",
-            contact: "9999999999",
-        },
-        notes: {
-            address: "Soumya Dey Corporate Office",
-        },
-        theme: {
-            color: "#61dafb",
-        },
+        // prefill: {
+        //     name: "Gautham",
+        //     email: "kinggautham495@gmail.com",
+        //     contact: "9999999999",
+        // },
     };
 
     const paymentObject = new window.Razorpay(options);
@@ -62,7 +56,8 @@ function App() {
 
   return (
     <div className="App">
-      Razorpay
+      Razorpay 
+      <button onClick={displayRazorpay}>Make a Payment</button>
     </div>
   );
 }
@@ -80,4 +75,8 @@ export default App;
 
 // 1. Aadhar Card Pan Card Bank Account
 // 2. SSN Bank 
+
+// 1. Individual 
+// 2. LLP 
+// 3. Enterprise Company
  
