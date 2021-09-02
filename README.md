@@ -1,4 +1,4 @@
-# Razorpay React JS and Node JS Course in Udemy :
+# Razorpay React JS and Node JS Course in Udemy
 
 This course will/is available at udemy at ......
 
